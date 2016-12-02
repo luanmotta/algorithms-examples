@@ -37,7 +37,7 @@ int main() {
 
 	char *palavra; // palavra a ser feita alocação dinâmica
 	
-	char palavra2[TAM]; // palavra com alocação estática
+	char *ponteiro;
 
 	// alocacao dinâmica
 	palavra = (char *)malloc(sizeof(char)  * TAM);
@@ -46,9 +46,14 @@ int main() {
 
 	printaDuasVezes(palavra);
 
-	copiaString(palavra2, retornaPalavra() ); 
+	ponteiro = retornaPalavra(); 
 
-	printf("%s", palavra2);
+	printf("%s", ponteiro);
+
+
+	// dar free nas alocações feitas
+	free(palavra);
+	free(ponteiro);
 	
 
 	getch();
